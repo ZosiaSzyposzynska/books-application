@@ -60,31 +60,30 @@ function initActions() {
   const filterForm = document.querySelector('.filters');
 
   filterForm.addEventListener('change', function (event) {
-  const target = event.target;
+    const target = event.target;
 
-  if (target.tagName === 'INPUT' && target.type === 'checkbox' && target.name === 'filter') {
-    const filterValue = target.value;
+    if (target.tagName === 'INPUT' && target.type === 'checkbox' && target.name === 'filter') {
+      const filterValue = target.value;
 
-    if (target.checked) {
       if (!filters.includes(filterValue)) {
         filters.push(filterValue);
       }
-    } else if (!target.checked){
-      const filterIndex = filters.indexOf(filterValue);
-      if (filterIndex !== -1) {
-        filters.splice(filterIndex, 1);
+      else {
+        const filterIndex = filters.indexOf(filterValue);
+        if (filterIndex !== -1) {
+          filters.splice(filterIndex, 1);
+        }
       }
-    }
 
-    filterBooks();
-    console.log('selected filters:', filters);
-  }
-});
+      filterBooks();
+      console.log('selected filters:', filters);
+    }
+  });
 
 }
 
 
-  function filterBooks() {
+function filterBooks() {
   const bookElements = document.querySelectorAll('.books');
 
   for (const bookElement of bookElements) {
