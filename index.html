@@ -45,7 +45,7 @@
       </header>
 
       <!-- cover image -->
-      <a href="#" class="book__image" data-id="{{ id }}">
+      <a href="#" class="book__image" data-id="{{ id }}"> <!-- Move data-id to the anchor (a) element -->
         <figure>
           <img src="{{ image }}" alt="{{ name }}">
         </figure>
@@ -53,14 +53,14 @@
 
       <!-- ratings -->
       <div class="book__rating">
-        <div class="book__rating__fill">
+        <div class="book__rating__fill" style="width: {{ ratingWidth }}%; background: {{ ratingBgc }}">
           {{ rating }}/10
         </div>
       </div>
 
-
     </li>
   </script>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="js/functions.js"></script>
