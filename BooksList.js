@@ -62,7 +62,10 @@ class BooksList {
         }
       });
 
-      thisBooksList.filterForm.addEventListener('change', function (event) {
+      
+     
+    }
+    thisBooksList.filterForm.addEventListener('change', function (event) {
         const target = event.target;
 
         if (target.tagName === 'INPUT' && target.type === 'checkbox' && target.name === 'filter') {
@@ -77,11 +80,9 @@ class BooksList {
               thisBooksList.filters.splice(filterIndex, 1);
             }
           }
-
+        thisBooksList.filterBooks();
         }
       });
-     
-    }
   }
 
   filterBooks(){
@@ -146,5 +147,5 @@ class BooksList {
 }
 
 
-const app = new BooksList();
+new BooksList();
 
